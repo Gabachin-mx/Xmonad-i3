@@ -1,7 +1,0 @@
-2023/12/26-21:42:57.423 b91 Reusing MANIFEST /home/paul/.config/google-chrome/Default/IndexedDB/https_www.citi.com_0.indexeddb.leveldb/MANIFEST-000001
-2023/12/26-21:42:57.423 b91 Recovering log #33
-2023/12/26-21:42:57.423 b91 Reusing old log /home/paul/.config/google-chrome/Default/IndexedDB/https_www.citi.com_0.indexeddb.leveldb/000033.log 
-2023/12/26-21:43:03.445 b91 Level-0 table #39: started
-2023/12/26-21:43:03.447 b91 Level-0 table #39: 507 bytes OK
-2023/12/26-21:43:03.450 b91 Delete type=0 #33
-2023/12/26-21:43:03.450 b91 Manual compaction at level-0 from '\x00\x0b\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0c\x00\x00\x00' @ 0 : 0; will stop at (end)

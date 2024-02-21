@@ -1,0 +1,14 @@
+2024/01/22-11:48:13.992 766 Reusing MANIFEST /home/paul/.config/google-chrome/Default/IndexedDB/https_mynixos.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/01/22-11:48:13.992 766 Recovering log #10
+2024/01/22-11:48:13.992 766 Reusing old log /home/paul/.config/google-chrome/Default/IndexedDB/https_mynixos.com_0.indexeddb.leveldb/000010.log 
+2024/01/22-11:48:13.992 766 Delete type=2 #8
+2024/01/22-11:48:14.001 772 Level-0 table #15: started
+2024/01/22-11:48:14.003 772 Level-0 table #15: 926 bytes OK
+2024/01/22-11:48:14.007 772 Delete type=0 #10
+2024/01/22-11:48:14.008 772 Manual compaction at level-0 from '\x00\x07\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x08\x00\x00\x00' @ 0 : 0; will stop at '\x00\x07\x00\x00\x05' @ 293 : 1
+2024/01/22-11:48:14.008 772 Compacting 1@0 + 1@1 files
+2024/01/22-11:48:14.010 772 Generated table #16@0: 102 keys, 1936 bytes
+2024/01/22-11:48:14.010 772 Compacted 1@0 + 1@1 files => 1936 bytes
+2024/01/22-11:48:14.014 772 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/01/22-11:48:14.014 772 Delete type=2 #15
+2024/01/22-11:48:14.014 767 Manual compaction at level-0 from '\x00\x07\x00\x00\x05' @ 293 : 1 .. '\x00\x08\x00\x00\x00' @ 0 : 0; will stop at (end)

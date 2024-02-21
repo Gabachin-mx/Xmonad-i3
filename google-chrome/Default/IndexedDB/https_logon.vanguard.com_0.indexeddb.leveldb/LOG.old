@@ -1,0 +1,14 @@
+2024/02/08-07:21:00.361 92d Reusing MANIFEST /home/paul/.config/google-chrome/Default/IndexedDB/https_logon.vanguard.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/02/08-07:21:00.361 92d Recovering log #56
+2024/02/08-07:21:00.362 92d Reusing old log /home/paul/.config/google-chrome/Default/IndexedDB/https_logon.vanguard.com_0.indexeddb.leveldb/000056.log 
+2024/02/08-07:21:00.362 92d Delete type=2 #54
+2024/02/08-07:21:02.029 92d Level-0 table #61: started
+2024/02/08-07:21:02.031 92d Level-0 table #61: 532 bytes OK
+2024/02/08-07:21:02.034 92d Delete type=0 #56
+2024/02/08-07:21:02.034 92d Manual compaction at level-0 from '\x00\x10\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x11\x00\x00\x00' @ 0 : 0; will stop at '\x00\x10\x00\x00\x05' @ 318 : 1
+2024/02/08-07:21:02.034 92d Compacting 1@0 + 1@1 files
+2024/02/08-07:21:02.036 92d Generated table #62@0: 11 keys, 491 bytes
+2024/02/08-07:21:02.037 92d Compacted 1@0 + 1@1 files => 491 bytes
+2024/02/08-07:21:02.039 92d compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/02/08-07:21:02.039 92d Delete type=2 #61
+2024/02/08-07:21:02.040 92d Manual compaction at level-0 from '\x00\x10\x00\x00\x05' @ 318 : 1 .. '\x00\x11\x00\x00\x00' @ 0 : 0; will stop at (end)

@@ -1,0 +1,6 @@
+2023/11/16-13:37:08.678 a08 Creating DB /home/paul/.config/google-chrome/Default/IndexedDB/https_fontawesome.com_0.indexeddb.leveldb since it was missing.
+2023/11/16-13:37:08.683 a08 Reusing MANIFEST /home/paul/.config/google-chrome/Default/IndexedDB/https_fontawesome.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/11/16-13:37:32.580 a09 Level-0 table #5: started
+2023/11/16-13:37:32.584 a09 Level-0 table #5: 3436 bytes OK
+2023/11/16-13:37:32.587 a09 Delete type=0 #3
+2023/11/16-13:37:32.588 a09 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

@@ -1,0 +1,6 @@
+2023/10/31-11:24:04.163 5e4 Creating DB /home/paul/.config/google-chrome/Default/IndexedDB/https_www.pcmag.com_0.indexeddb.leveldb since it was missing.
+2023/10/31-11:24:04.170 5e4 Reusing MANIFEST /home/paul/.config/google-chrome/Default/IndexedDB/https_www.pcmag.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/10/31-11:27:07.688 5d4 Level-0 table #5: started
+2023/10/31-11:27:07.690 5d4 Level-0 table #5: 1071 bytes OK
+2023/10/31-11:27:07.693 5d4 Delete type=0 #3
+2023/10/31-11:27:07.693 5d4 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

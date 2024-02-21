@@ -1,0 +1,8 @@
+ctrl + alt + t ; {f,a,x,t,m,w}
+	{foot,alacritty,xterm,terminology,kitty -e tmux,wezterm}
+
+ctrl + alt + w ; {b,f,g,t,y,v,q}
+	{brave,firefox,google-chrome-stable,thunderbird,alacritty -e yt,vlc,qbittorrent}
+	
+ctrl + alt + v ; {e,m,p,t,r}
+	{alacritty -e vim,kitty -e micro,pluma,thunar,kitty -e ranger}

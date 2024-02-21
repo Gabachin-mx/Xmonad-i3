@@ -1,0 +1,25 @@
+2024/02/20-22:42:29.154 64a Reusing MANIFEST /home/paul/.config/google-chrome/Default/IndexedDB/https_outlook.live.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/02/20-22:42:29.155 64a Recovering log #2954
+2024/02/20-22:42:29.155 64a Reusing old log /home/paul/.config/google-chrome/Default/IndexedDB/https_outlook.live.com_0.indexeddb.leveldb/002954.log 
+2024/02/20-22:42:29.156 64a Delete type=2 #2952
+2024/02/20-22:42:29.421 64a Level-0 table #2959: started
+2024/02/20-22:42:29.426 64a Level-0 table #2959: 628 bytes OK
+2024/02/20-22:42:29.430 64a Delete type=0 #2954
+2024/02/20-22:42:29.431 64a Manual compaction at level-0 from ' \x1e\x03\x00\x00\x00' @ 72057594037927935 : 1 .. ' \x1f\x03\x00\x00\x00' @ 0 : 0; will stop at ' \x1f\x03\x00\x00\x05' @ 16193 : 1
+2024/02/20-22:42:29.431 64a Compacting 1@0 + 1@1 files
+2024/02/20-22:42:29.434 64a Generated table #2960@0: 7 keys, 392 bytes
+2024/02/20-22:42:29.435 64a Compacted 1@0 + 1@1 files => 392 bytes
+2024/02/20-22:42:29.438 64a compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/02/20-22:42:29.439 64a Delete type=2 #2959
+2024/02/20-22:42:29.439 657 Manual compaction at level-0 from ' \x1f\x03\x00\x00\x05' @ 16193 : 1 .. ' \x1f\x03\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/02/20-22:42:29.440 656 Level-0 table #2962: started
+2024/02/20-22:42:29.444 656 Level-0 table #2962: 509 bytes OK
+2024/02/20-22:42:29.450 656 Delete type=2 #2956
+2024/02/20-22:42:29.450 656 Delete type=0 #2958
+2024/02/20-22:42:29.451 658 Manual compaction at level-0 from ' \x1f\x03\x00\x00\x00' @ 72057594037927935 : 1 .. '  \x03\x00\x00\x00' @ 0 : 0; will stop at ' \x1f\x03\x00\x00\x05' @ 16219 : 0
+2024/02/20-22:42:29.451 658 Compacting 1@0 + 1@1 files
+2024/02/20-22:42:29.455 658 Generated table #2963@0: 4 keys, 250 bytes
+2024/02/20-22:42:29.455 658 Compacted 1@0 + 1@1 files => 250 bytes
+2024/02/20-22:42:29.460 658 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/02/20-22:42:29.461 658 Delete type=2 #2962
+2024/02/20-22:42:29.462 64a Manual compaction at level-0 from ' \x1f\x03\x00\x00\x05' @ 16219 : 0 .. '  \x03\x00\x00\x00' @ 0 : 0; will stop at (end)

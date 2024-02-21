@@ -1,0 +1,7 @@
+2023/11/07-20:47:54.293 957 Reusing MANIFEST /home/paul/.config/google-chrome/Default/IndexedDB/https_datanoticias.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/11/07-20:47:54.293 957 Recovering log #4
+2023/11/07-20:47:54.294 957 Reusing old log /home/paul/.config/google-chrome/Default/IndexedDB/https_datanoticias.com_0.indexeddb.leveldb/000004.log 
+2023/11/07-20:48:17.398 95a Level-0 table #8: started
+2023/11/07-20:48:17.401 95a Level-0 table #8: 593 bytes OK
+2023/11/07-20:48:17.404 95a Delete type=0 #4
+2023/11/07-20:48:17.404 957 Manual compaction at level-0 from '\x00\x02\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x03\x00\x00\x00' @ 0 : 0; will stop at (end)

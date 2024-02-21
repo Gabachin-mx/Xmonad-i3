@@ -1,0 +1,7 @@
+2024/01/24-22:58:50.255 73a Reusing MANIFEST /home/paul/.config/google-chrome/Default/IndexedDB/https_linuxize.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/01/24-22:58:50.255 73a Recovering log #3
+2024/01/24-22:58:50.255 73a Reusing old log /home/paul/.config/google-chrome/Default/IndexedDB/https_linuxize.com_0.indexeddb.leveldb/000003.log 
+2024/01/24-22:59:24.266 73b Level-0 table #5: started
+2024/01/24-22:59:24.270 73b Level-0 table #5: 23730 bytes OK
+2024/01/24-22:59:24.273 73b Delete type=0 #3
+2024/01/24-22:59:24.274 73b Manual compaction at level-0 from (begin) .. (end); will stop at (end)

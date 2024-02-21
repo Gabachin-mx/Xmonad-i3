@@ -1,0 +1,14 @@
+2024/02/01-08:51:09.543 ddc1 Reusing MANIFEST /home/paul/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_outlook.live.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/02/01-08:51:09.543 ddc1 Recovering log #172
+2024/02/01-08:51:09.543 ddc1 Reusing old log /home/paul/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_outlook.live.com_0.indexeddb.leveldb/000172.log 
+2024/02/01-08:51:09.543 ddc1 Delete type=2 #171
+2024/02/01-08:51:09.552 ddc2 Level-0 table #177: started
+2024/02/01-08:51:09.555 ddc2 Level-0 table #177: 551 bytes OK
+2024/02/01-08:51:09.560 ddc2 Delete type=0 #172
+2024/02/01-08:51:09.560 ddc2 Manual compaction at level-0 from '\x002\x00\x00\x00' @ 72057594037927935 : 1 .. '\x003\x00\x00\x00' @ 0 : 0; will stop at '\x002\x00\x00\x05' @ 896 : 1
+2024/02/01-08:51:09.560 ddc2 Compacting 1@0 + 1@1 files
+2024/02/01-08:51:09.563 ddc2 Generated table #178@0: 4 keys, 259 bytes
+2024/02/01-08:51:09.563 ddc2 Compacted 1@0 + 1@1 files => 259 bytes
+2024/02/01-08:51:09.567 ddc2 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/02/01-08:51:09.568 ddc2 Delete type=2 #177
+2024/02/01-08:51:09.568 ddc2 Manual compaction at level-0 from '\x002\x00\x00\x05' @ 896 : 1 .. '\x003\x00\x00\x00' @ 0 : 0; will stop at (end)

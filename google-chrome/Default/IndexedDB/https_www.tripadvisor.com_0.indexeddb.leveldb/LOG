@@ -1,0 +1,6 @@
+2024/02/05-18:57:35.774 527 Creating DB /home/paul/.config/google-chrome/Default/IndexedDB/https_www.tripadvisor.com_0.indexeddb.leveldb since it was missing.
+2024/02/05-18:57:35.781 527 Reusing MANIFEST /home/paul/.config/google-chrome/Default/IndexedDB/https_www.tripadvisor.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/02/05-18:57:37.801 528 Level-0 table #5: started
+2024/02/05-18:57:37.803 528 Level-0 table #5: 3872 bytes OK
+2024/02/05-18:57:37.806 528 Delete type=0 #3
+2024/02/05-18:57:37.806 528 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

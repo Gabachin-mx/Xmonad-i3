@@ -1,0 +1,170 @@
+[global_config]
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+  [[init]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_window = True
+      maximised = True
+      order = 0
+      parent = ""
+      position = 0:26
+      size = 1918, 1002
+      title = /bin/bash
+      type = Window
+    [[[child1]]]
+      active_page = 0
+      labels = www, MA, all other, dev logs, staging logs, live logs
+      last_active_term = d3c317d7-964a-4625-96d0-39deb5166072, 93ce7874-059e-4794-b337-7b640654a3d6, db090e6f-07e4-431e-ad86-a8b6cb965b5e, 906a5f4d-a3af-4da8-8385-673b132e7edd, 1b48b3b9-216c-470b-be53-ec1e8c6fdc0b, cb7d737c-a064-4e0e-ad5e-59c47d7bdd3b
+      order = 0
+      parent = child0
+      type = Notebook
+    [[[child11]]]
+      order = 3
+      parent = child1
+      position = 956
+      ratio = 0.500261643119
+      type = HPaned
+    [[[child14]]]
+      order = 4
+      parent = child1
+      position = 956
+      ratio = 0.500261643119
+      type = HPaned
+    [[[child17]]]
+      order = 5
+      parent = child1
+      position = 956
+      ratio = 0.500261643119
+      type = HPaned
+    [[[child4]]]
+      order = 2
+      parent = child1
+      position = 956
+      ratio = 0.500261643119
+      type = HPaned
+    [[[child5]]]
+      order = 0
+      parent = child4
+      position = 481
+      ratio = 0.500520291363
+      type = VPaned
+    [[[child8]]]
+      order = 1
+      parent = child4
+      position = 481
+      ratio = 0.500520291363
+      type = VPaned
+    [[[terminal10]]]
+      command = cd /vhosts/www.example.com/; git pull; bash
+      order = 1
+      parent = child8
+      profile = default
+      title = www.example.com
+      type = Terminal
+      uuid = db090e6f-07e4-431e-ad86-a8b6cb965b5e
+    [[[terminal12]]]
+      command = "ssh -t git 'cd vhosts/www.bytefreaks.net/ci_applications/registration_forms/logs/; ll; bash'"
+      directory = ""
+      order = 0
+      parent = child11
+      profile = default
+      title = WWW dev logs
+      type = Terminal
+      uuid = 4c08356b-b516-4286-8b6d-ba071f1394f3
+    [[[terminal13]]]
+      command = "ssh -t git 'cd vhosts/my.bytefreaks.net/symfony/var/logs/; ll; bash'"
+      directory = ""
+      order = 1
+      parent = child11
+      profile = default
+      title = MA dev logs
+      type = Terminal
+      uuid = 906a5f4d-a3af-4da8-8385-673b132e7edd
+    [[[terminal15]]]
+      command = "ssh -t web13 'cd /data/var/www/vhosts/staging-www.bytefreaks.net/htdocs/ci_applications/registration_forms/logs/; ls -la; bash'"
+      order = 0
+      parent = child14
+      profile = default
+      title = WWW staging logs
+      type = Terminal
+      uuid = 1b48b3b9-216c-470b-be53-ec1e8c6fdc0b
+    [[[terminal16]]]
+      command = "ssh -t web13 'cd /data/var/www/vhosts/staging-my.bytefreaks.net/htdocs/symfony/var/logs/; ls -la; bash'"
+      order = 1
+      parent = child14
+      profile = default
+      title = MA staging logs
+      type = Terminal
+      uuid = e26e94cd-855a-44ff-9c67-66b1c03bac56
+    [[[terminal18]]]
+      command = "ssh -t web13 'cd /data/var/www/vhosts/www.bytefreaks.net/htdocs/ci_applications/registration_forms/logs/; ls -la; bash'"
+      directory = ""
+      order = 0
+      parent = child17
+      profile = default
+      title = WWW Live logs
+      type = Terminal
+      uuid = 70466609-2d01-45d2-84b4-e377b111e540
+    [[[terminal19]]]
+      command = "ssh -t web13 'cd /data/var/www/vhosts/my.bytefreaks.net/htdocs/symfony/var/logs/; ls -la; bash'"
+      directory = ""
+      order = 1
+      parent = child17
+      profile = default
+      title = MA Live logs
+      type = Terminal
+      uuid = cb7d737c-a064-4e0e-ad5e-59c47d7bdd3b
+    [[[terminal2]]]
+      command = cd /vhosts/www.bytefreaks.net/; git pull; bash
+      order = 0
+      parent = child1
+      profile = default
+      title = www.bytefreaks.net
+      type = Terminal
+      uuid = d3c317d7-964a-4625-96d0-39deb5166072
+    [[[terminal3]]]
+      command = cd /vhosts/my.bytefreaks.net/; git pull; bash
+      order = 1
+      parent = child1
+      profile = default
+      title = my.bytefreaks.net
+      type = Terminal
+      uuid = 93ce7874-059e-4794-b337-7b640654a3d6
+    [[[terminal6]]]
+      command = cd /vhosts/www.michanicos.com/; git pull; bash
+      order = 0
+      parent = child5
+      profile = default
+      title = www.michanicos.com
+      type = Terminal
+      uuid = 2f204209-0c0b-4fab-b883-95f95f5d38e9
+    [[[terminal7]]]
+      command = cd /vhosts/www.etea.com.cy/; git pull; bash
+      order = 1
+      parent = child5
+      profile = default
+      title = www.etea.com.cy
+      type = Terminal
+      uuid = 6f801914-5225-4e1f-b54c-f48540274614
+    [[[terminal9]]]
+      command = cd /vhosts/www.ieee.org/; git pull; bash
+      order = 0
+      parent = child8
+      profile = default
+      title = www.ieee.org
+      type = Terminal
+      uuid = 3dbfe3a7-2e25-4e7d-bb02-dc4aeeeda47f
+[plugins]
+[profiles]
+  [[default]]
+    background_darkness = 0.8
+    cursor_color = "#ffffff"
+    foreground_color = "#ffffff"

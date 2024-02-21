@@ -1,0 +1,44 @@
+{
+   "checksum": "2e04aba3ef263897414a9acf6ee6736c",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13258742823000000",
+            "date_last_used": "0",
+            "guid": "0a25b22e-4eaa-43b9-8a1c-698c1f1c3882",
+            "id": "5",
+            "name": "Watch CNN Live Stream in HD Free From United States",
+            "type": "url",
+            "url": "https://www.livenewsworld.com/watchcnnlivestream/"
+         } ],
+         "date_added": "13343247189123090",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Bookmarks",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13343247189123093",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13343247189123095",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

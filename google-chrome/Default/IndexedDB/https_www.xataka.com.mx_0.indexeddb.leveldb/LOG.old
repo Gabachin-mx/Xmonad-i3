@@ -1,0 +1,6 @@
+2023/10/03-11:07:32.814 489 Creating DB /home/paul/.config/google-chrome/Default/IndexedDB/https_www.xataka.com.mx_0.indexeddb.leveldb since it was missing.
+2023/10/03-11:07:32.821 489 Reusing MANIFEST /home/paul/.config/google-chrome/Default/IndexedDB/https_www.xataka.com.mx_0.indexeddb.leveldb/MANIFEST-000001
+2023/10/03-11:08:41.255 489 Level-0 table #5: started
+2023/10/03-11:08:41.257 489 Level-0 table #5: 1880 bytes OK
+2023/10/03-11:08:41.261 489 Delete type=0 #3
+2023/10/03-11:08:41.262 489 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

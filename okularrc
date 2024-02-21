@@ -1,0 +1,62 @@
+[Desktop Entry]
+FullScreen=false
+shouldShowMenuBarComingFromFullScreen=true
+shouldShowToolBarComingFromFullScreen=true
+
+[General]
+LockSidebar=true
+ShowSidebar=true
+
+[MainWindow]
+1280x720 screen: Height=670
+1280x720 screen: Width=1280
+1280x720 screen: Window-Maximized=true
+1280x720 screen: XPosition=0
+1280x720 screen: YPosition=50
+1333x749 screen: Window-Maximized=true
+1333x750 screen: Window-Maximized=true
+State=AAAA/wAAAAD9AAAAAQAAAAAAAABaAAACc/wCAAAAAfsAAAAcAG8AawB1AGwAYQByAF8AcwBpAGQAZQBiAGEAcgEAAABAAAACcwAAAM8A///+AAAEnwAAAnMAAAAEAAAABAAAAAgAAAAI/AAAAAMAAAABAAAAAQAAACwAcQB1AGkAYwBrAEEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgIAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAiAGEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+eDP-1 Height 1280x720=703
+eDP-1 Height 1920x1080=1030
+eDP-1 Height 960x540=528
+eDP-1 Width 1280x720=1277
+eDP-1 Width 1920x1080=1914
+eDP-1 Width 960x540=958
+eDP-1 XPosition 1280x720=1
+eDP-1 XPosition 1920x1080=3
+eDP-1 XPosition 960x540=1
+eDP-1 YPosition 1280x720=15
+eDP-1 YPosition 1920x1080=26
+eDP-1 YPosition 960x540=1
+eDP1=eDP1
+eDP1 Height 1280x720=689
+eDP1 Height 1280x720 eDP1=691
+eDP1 Width 1280x720=1280
+eDP1 Width 1280x720 eDP1=1280
+eDP1 XPosition 1280x720=0
+eDP1 XPosition 1280x720 eDP1=0
+eDP1 YPosition 1280x720=31
+eDP1 YPosition 1280x720 eDP1=29
+
+[Recent Files]
+File1[$e]=/usr/share/sddm/themes/maldives/background.jpg
+File10[$e]=$HOME/.config/vifm/vifm-help.txt
+File2[$e]=/usr/share/sddm/themes/maldives/rectangle.png
+File3[$e]=$HOME/Downloads/NFFBAR.pdf
+File4[$e]=$HOME/Documents/Official/passport.jpg
+File5[$e]=$HOME/Downloads/print.jpg
+File6[$e]=$HOME/Downloads/Residencia_perm.jpg
+File7[$e]=$HOME/Downloads/2023-11-16T16_07_11.814Z.jpg
+File8[$e]=$HOME/Downloads/comprobante.jpeg
+File9[$e]=$HOME/.config/i3/alternating_layouts.py
+Name1[$e]=background.jpg
+Name10[$e]=vifm-help.txt
+Name2[$e]=rectangle.png
+Name3[$e]=NFFBAR.pdf
+Name4[$e]=passport.jpg
+Name5[$e]=print.jpg
+Name6[$e]=Residencia_perm.jpg
+Name7[$e]=2023-11-16T16_07_11.814Z.jpg
+Name8[$e]=comprobante.jpeg
+Name9[$e]=alternating_layouts.py

@@ -1,0 +1,18 @@
+2023/11/05-18:49:01.551 3ce32 Creating DB /home/paul/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.citi.com_0.indexeddb.leveldb since it was missing.
+2023/11/05-18:49:01.557 3ce32 Reusing MANIFEST /home/paul/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.citi.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/11/05-18:49:13.821 3ce3f Level-0 table #5: started
+2023/11/05-18:49:13.824 3ce3f Level-0 table #5: 1107 bytes OK
+2023/11/05-18:49:13.827 3ce3f Delete type=0 #3
+2023/11/05-18:49:13.827 3ce32 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
+2023/11/05-18:49:15.828 3ce32 Level-0 table #7: started
+2023/11/05-18:49:15.831 3ce32 Level-0 table #7: 256 bytes OK
+2023/11/05-18:49:15.835 3ce32 Delete type=0 #4
+2023/11/05-18:49:15.835 3ce32 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2023/11/05-18:49:15.835 3ce32 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x00\x00\x002\x02\x02\x01\x00\x00\x00\x00\x00\x00\x00\x00' @ 61 : 0
+2023/11/05-18:49:15.835 3ce32 Compacting 1@1 + 1@2 files
+2023/11/05-18:49:15.837 3ce32 Generated table #8@1: 19 keys, 539 bytes
+2023/11/05-18:49:15.837 3ce32 Compacted 1@1 + 1@2 files => 539 bytes
+2023/11/05-18:49:15.840 3ce32 compacted to: files[ 0 0 1 0 0 0 0 ]
+2023/11/05-18:49:15.840 3ce32 Delete type=2 #5
+2023/11/05-18:49:15.840 3ce32 Delete type=2 #7
+2023/11/05-18:49:15.841 3ce32 Manual compaction at level-1 from '\x00\x00\x00\x002\x02\x02\x01\x00\x00\x00\x00\x00\x00\x00\x00' @ 61 : 0 .. (end); will stop at (end)

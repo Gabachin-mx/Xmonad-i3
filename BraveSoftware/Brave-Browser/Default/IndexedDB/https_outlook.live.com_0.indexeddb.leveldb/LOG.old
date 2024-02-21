@@ -1,0 +1,24 @@
+2024/02/01-08:50:53.253 ddc1 Reusing MANIFEST /home/paul/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_outlook.live.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/02/01-08:50:53.253 ddc1 Recovering log #165
+2024/02/01-08:50:53.253 ddc1 Reusing old log /home/paul/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_outlook.live.com_0.indexeddb.leveldb/000165.log 
+2024/02/01-08:50:53.265 ddc2 Level-0 table #170: started
+2024/02/01-08:50:53.267 ddc2 Level-0 table #170: 818 bytes OK
+2024/02/01-08:50:53.270 ddc2 Delete type=0 #165
+2024/02/01-08:50:53.270 ddc2 Manual compaction at level-0 from '\x000\x00\x00\x00' @ 72057594037927935 : 1 .. '\x001\x00\x00\x00' @ 0 : 0; will stop at '\x001\x00\x00\x05' @ 864 : 1
+2024/02/01-08:50:53.270 ddc2 Compacting 1@0 + 1@1 files
+2024/02/01-08:50:53.272 ddc2 Generated table #171@0: 7 keys, 385 bytes
+2024/02/01-08:50:53.273 ddc2 Compacted 1@0 + 1@1 files => 385 bytes
+2024/02/01-08:50:53.275 ddc2 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/02/01-08:50:53.275 ddc2 Delete type=2 #170
+2024/02/01-08:50:53.275 ddc2 Manual compaction at level-0 from '\x001\x00\x00\x05' @ 864 : 1 .. '\x001\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/02/01-08:50:53.276 ddc2 Level-0 table #173: started
+2024/02/01-08:50:53.278 ddc2 Level-0 table #173: 496 bytes OK
+2024/02/01-08:50:53.281 ddc2 Delete type=0 #169
+2024/02/01-08:50:53.281 ddc2 Delete type=2 #167
+2024/02/01-08:50:53.281 ddc2 Manual compaction at level-0 from '\x001\x00\x00\x00' @ 72057594037927935 : 1 .. '\x002\x00\x00\x00' @ 0 : 0; will stop at '\x001\x00\x00\x05' @ 890 : 0
+2024/02/01-08:50:53.281 ddc2 Compacting 1@0 + 1@1 files
+2024/02/01-08:50:53.283 ddc2 Generated table #174@0: 4 keys, 247 bytes
+2024/02/01-08:50:53.283 ddc2 Compacted 1@0 + 1@1 files => 247 bytes
+2024/02/01-08:50:53.286 ddc2 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/02/01-08:50:53.286 ddc2 Delete type=2 #173
+2024/02/01-08:50:53.286 ddc2 Manual compaction at level-0 from '\x001\x00\x00\x05' @ 890 : 0 .. '\x002\x00\x00\x00' @ 0 : 0; will stop at (end)

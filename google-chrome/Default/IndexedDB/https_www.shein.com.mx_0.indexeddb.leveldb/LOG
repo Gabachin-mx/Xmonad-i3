@@ -1,0 +1,6 @@
+2024/02/14-05:48:08.237 fe4 Creating DB /home/paul/.config/google-chrome/Default/IndexedDB/https_www.shein.com.mx_0.indexeddb.leveldb since it was missing.
+2024/02/14-05:48:08.316 fe4 Reusing MANIFEST /home/paul/.config/google-chrome/Default/IndexedDB/https_www.shein.com.mx_0.indexeddb.leveldb/MANIFEST-000001
+2024/02/14-05:48:30.086 fe4 Level-0 table #5: started
+2024/02/14-05:48:30.089 fe4 Level-0 table #5: 1024 bytes OK
+2024/02/14-05:48:30.093 fe4 Delete type=0 #3
+2024/02/14-05:48:30.094 fe4 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

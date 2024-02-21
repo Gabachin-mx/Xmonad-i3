@@ -1,0 +1,15 @@
+2024/02/17-13:55:41.202 6f2 Reusing MANIFEST /home/paul/.config/google-chrome/Default/IndexedDB/https_drive.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/02/17-13:55:41.203 6f2 Recovering log #908
+2024/02/17-13:55:41.203 6f2 Reusing old log /home/paul/.config/google-chrome/Default/IndexedDB/https_drive.google.com_0.indexeddb.leveldb/000908.log 
+2024/02/17-13:56:34.957 6f3 Level-0 table #913: started
+2024/02/17-13:56:34.960 6f3 Level-0 table #913: 209 bytes OK
+2024/02/17-13:56:34.964 6f3 Delete type=0 #908
+2024/02/17-13:56:34.965 6f3 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2024/02/17-13:56:34.966 6f3 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x00\x00\x00\x06' @ 1249225 : 1
+2024/02/17-13:56:34.966 6f3 Compacting 1@1 + 1@2 files
+2024/02/17-13:56:35.016 6f3 Generated table #914@1: 2292 keys, 2124570 bytes
+2024/02/17-13:56:35.016 6f3 Compacted 1@1 + 1@2 files => 2124570 bytes
+2024/02/17-13:56:35.021 6f3 compacted to: files[ 0 0 4 0 0 0 0 ]
+2024/02/17-13:56:35.021 6f3 Delete type=2 #913
+2024/02/17-13:56:35.021 6f3 Delete type=2 #910
+2024/02/17-13:56:35.021 6f3 Manual compaction at level-1 from '\x00\x00\x00\x00\x06' @ 1249225 : 1 .. (end); will stop at (end)

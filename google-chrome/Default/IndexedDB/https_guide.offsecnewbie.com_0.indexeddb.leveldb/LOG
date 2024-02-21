@@ -1,0 +1,6 @@
+2024/01/07-08:45:26.613 966 Creating DB /home/paul/.config/google-chrome/Default/IndexedDB/https_guide.offsecnewbie.com_0.indexeddb.leveldb since it was missing.
+2024/01/07-08:45:26.619 966 Reusing MANIFEST /home/paul/.config/google-chrome/Default/IndexedDB/https_guide.offsecnewbie.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/01/07-08:45:26.963 978 Level-0 table #5: started
+2024/01/07-08:45:26.967 978 Level-0 table #5: 2200 bytes OK
+2024/01/07-08:45:26.971 978 Delete type=0 #3
+2024/01/07-08:45:26.972 969 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)

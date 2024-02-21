@@ -1,0 +1,7 @@
+2024/01/04-21:26:43.364 560b5 Reusing MANIFEST /home/paul/.config/google-chrome/Default/IndexedDB/https_www.linkedin.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/01/04-21:26:43.364 560b5 Recovering log #3
+2024/01/04-21:26:43.365 560b5 Reusing old log /home/paul/.config/google-chrome/Default/IndexedDB/https_www.linkedin.com_0.indexeddb.leveldb/000003.log 
+2024/01/04-21:26:47.235 560b6 Level-0 table #5: started
+2024/01/04-21:26:47.237 560b6 Level-0 table #5: 1696 bytes OK
+2024/01/04-21:26:47.240 560b6 Delete type=0 #3
+2024/01/04-21:26:47.240 560b6 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

@@ -16,12 +16,20 @@
 
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
+(setq history-length 25 )
+(savehist-mode 1)
+
+(global-auto-revert-mode 1)
+(setq auto-revert-verbose nil)
 
 ;; disable test is read only
 (defun my-command-error-function (data context caller)
   "Ignore the buffer-read-only signal; pass the rest to the default handler."
   (when (not (eq (car data) 'text-read-only))
     (command-error-default-function data context caller)))
+
+(add-to-list 'display-buffer-alist
+             '("^\\*.*\\*$" . (display-buffer-below-selected)))
 
 (setq command-error-function #'my-command-error-function)
 
@@ -83,6 +91,13 @@
 (custom-set-faces
 '(default ((t (:background "#1a1a1a" :foreground "#a9b1d6")))))
 
+;; :q kills current buffer
+(map!
+ [remap evil-quit] #'kill-current-buffer)
+
+(map! :leader
+      :desc "Load new theme" "h t" #'counsel-load-theme)
+
 (setq doom-one-brighter-comments t
       doom-one-comment-bg nil)
 
@@ -122,8 +137,26 @@
 (display-time-mode 1) ; show time and date
 (setq display-time-format "%Y-%m-%d %H:%M") ; time and date format
 
+(after! neotree
+  (setq neo-smart-open t
+        neo-window-fixed-size nil))
+(after! doom-themes
+  (setq doom-neotree-enable-variable-pitch t))
+(map! :leader
+      :desc "Toggle neotree file viewer" "t n" #'neotree-toggle
+      :desc "Open directory in neotree"  "d n" #'neotree-dir)
+
 (setq delete-by-moving-to-trash t
       trash-directory "~/.local/share/Trash/files/")
+
+;; split winodws vertically by default
+(setq
+   split-width-threshold 0
+   split-height-threshold nil)
+
+;; open new buffers in same window
+(add-to-list 'display-buffer-alist
+	      '(display-buffer-reuse-window display-buffer-same-window))
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -173,6 +206,26 @@
 ;;
 ;; - `load!' for loading external *.el files relative to this one
 ;; - `use-package!' for configuring packages
+;;
+;;
+(defun display-buffer-same-window (buffer alist)
+  (unless (or (cdr (assq 'inhibit-same-window alist))
+              (window-minibuffer-p)
+              (window-dedicated-p))
+    (window--display-buffer buffer (selected-window) 'reuse alist)))
+;;
+;;
+(use-package dired
+;;  ..other setup stuff here..
+  :config
+  (use-package all-the-icons-dired
+    :if (display-graphic-p)
+    :hook (dired-mode . all-the-icons-dired-mode)
+    :config (setq all-the-icons-dired-monochrome nil))
+  (use-package treemacs-icons-dired
+    :if (display-graphic-p)
+    :config (treemacs-icons-dired-mode))
+  )
 ;;
 (use-package dired-subtree :ensure t
   :after dired
@@ -263,6 +316,27 @@
 (setq evil-normal-state-cursor '(box "dodger blue")
       evil-insert-state-cursor '(bar "medium sea green")
       evil-visual-state-cursor '(hollow "orange"))
+
+(use-package company
+  :defer 2
+  :diminish
+  :custom
+  (company-begin-commands '(self-insert-command))
+  (company-idle-delay .1)
+  (company-minimum-prefix-length 2)
+  (company-show-numbers t)
+  (company-tooltip-align-annotations 't)
+  (global-company-mode t))
+
+(use-package company-box
+  :after company
+  :diminish
+  :hook (company-mode . company-box-mode))
+
+(map! :leader
+      (:prefix ("c h" . "Help info from Clippy")
+       :desc "Clippy describes function under point" "f" #'clippy-describe-function
+       :desc "Clippy describes variable under point" "v" #'clippy-describe-variable))
 
 (use-package evil-terminal-cursor-changer
 :ensure t
@@ -534,51 +608,190 @@ _h_ decrease width    _l_ increase width
 
 (add-to-list 'load-path "~/.doom.d/lisp")
 
-;; (use-package welcome-dashboard
-;;   :ensure nil ;; when using local file and not straight nor use-package
-;;   :config
-;;   (setq welcome-dashboard-latitude 56.7365
-;;         welcome-dashboard-longitude 16.2981 ;; latitude and longitude must be set to show weather information
-;;         welcome-dashboard-use-nerd-icons t ;; Use nerd icons instead of all-the-icons
-;;         welcome-dashboard-path-max-length 75
-;;         welcome-dashboard-use-fahrenheit nil ;; show in celcius or fahrenheit.
-;;         welcome-dashboard-min-left-padding 10
-;;         welcome-dashboard-image-file "~/.doom.d/themes/true.png"
-;;         welcome-dashboard-image-width 200
-;;         welcome-dashboard-image-height 169
-;;         welcome-dashboard-title "Hey Paulie")
-;;   (welcome-dashboard-create-welcome-hook))
+(use-package welcome-dashboard
+  :ensure nil ;; when using local file and not straight nor use-package
+  :config
+  (setq welcome-dashboard-latitude 56.7365
+        welcome-dashboard-longitude 16.2981 ;; latitude and longitude must be set to show weather information
+        welcome-dashboard-use-nerd-icons t ;; Use nerd icons instead of all-the-icons
+        welcome-dashboard-path-max-length 75
+        welcome-dashboard-use-fahrenheit nil ;; show in celcius or fahrenheit.
+        welcome-dashboard-min-left-padding 10
+        welcome-dashboard-image-file "~/.doom.d/themes/true.png"
+        welcome-dashboard-image-width 200
+        welcome-dashboard-image-height 169
+        welcome-dashboard-title "Hey Paulie")
+  (welcome-dashboard-create-welcome-hook))
 
-;; use-package with package.el:
-(use-package dashboard
+;; ;; use-package with package.el:
+;; (use-package dashboard
+;;   :ensure t
+;;   :config
+;;   (dashboard-setup-startup-hook))
+
+;; (setq initial-buffer-choice (lambda () (get-buffer-create "*dashboard*")))
+
+;; set the title
+;; (setq dashboard-banner-logo-title "hey paulie")
+;; ;; Set the banner
+;; (setq dashboard-startup-banner "~/.doom.d/themes/true.png")
+;; ;; Value can be
+;; ;; - nil to display no banner
+;; ;; - 'official which displays the official emacs logo
+;; ;; - 'logo which displays an alternative emacs logo
+;; ;; - 1, 2 or 3 which displays one of the text banners
+;; ;; - "path/to/your/image.gif", "path/to/your/image.png", "path/to/your/text.txt" or "path/to/your/image.xbm" which displays whatever gif/image/text/xbm you would prefer
+;; ;; - a cons of '("path/to/your/image.png" . "path/to/your/text.txt")
+
+;; ;; Content is not centered by default. To center, set
+;; (setq dashboard-center-content t)
+;; ;; vertically center content
+;; (setq dashboard-vertically-center-content t)
+
+;; ;; To disable shortcut "jump" indicators for each section, set
+;; (setq dashboard-show-shortcuts nil)
+
+;; (setq dashboard-items '((recents   . 5)
+;;                         (bookmarks . 5)
+;;                         (projects  . 5)
+;;                         (agenda    . 5)
+;;                         (registers . 5)))
+
+;; Enable vertico
+(use-package vertico
+  :init
+  (vertico-mode)
+
+  ;; Different scroll margin
+  ;; (setq vertico-scroll-margin 0)
+
+  ;; Show more candidates
+  ;; (setq vertico-count 20)
+
+  ;; Grow and shrink the Vertico minibuffer
+  ;; (setq vertico-resize t)
+
+  ;; Optionally enable cycling for `vertico-next' and `vertico-previous'.
+  ;; (setq vertico-cycle t)
+  )
+
+;; Persist history over Emacs restarts. Vertico sorts by history position.
+(use-package savehist
+  :init
+  (savehist-mode))
+
+;; A few more useful configurations...
+(use-package emacs
+  :init
+  ;; Add prompt indicator to `completing-read-multiple'.
+  ;; We display [CRM<separator>], e.g., [CRM,] if the separator is a comma.
+  (defun crm-indicator (args)
+    (cons (format "[CRM%s] %s"
+                  (replace-regexp-in-string
+                   "\\`\\[.*?]\\*\\|\\[.*?]\\*\\'" ""
+                   crm-separator)
+                  (car args))
+          (cdr args)))
+  (advice-add #'completing-read-multiple :filter-args #'crm-indicator)
+
+  ;; Do not allow the cursor in the minibuffer prompt
+  (setq minibuffer-prompt-properties
+        '(read-only t cursor-intangible t face minibuffer-prompt))
+  (add-hook 'minibuffer-setup-hook #'cursor-intangible-mode)
+
+  ;; Emacs 28: Hide commands in M-x which do not work in the current mode.
+  ;; Vertico commands are hidden in normal buffers.
+  ;; (setq read-extended-command-predicate
+  ;;       #'command-completion-default-include-p)
+
+  ;; Enable recursive minibuffers
+  (setq enable-recursive-minibuffers t))
+
+;; Optionally use the `orderless' completion style.
+(use-package orderless
+  :init
+  ;; Configure a custom style dispatcher (see the Consult wiki)
+  ;; (setq orderless-style-dispatchers '(+orderless-consult-dispatch orderless-affix-dispatch)
+  ;;       orderless-component-separator #'orderless-escapable-split-on-space)
+  (setq completion-styles '(orderless basic)
+        completion-category-defaults nil
+        completion-category-overrides '((file (styles partial-completion)))))
+
+;; Use `consult-completion-in-region' if Vertico is enabled.
+;; Otherwise use the default `completion--in-region' function.
+(setq completion-in-region-function
+      (lambda (&rest args)
+        (apply (if vertico-mode
+                   #'consult-completion-in-region
+                 #'completion--in-region)
+               args)))
+
+;; Configure directory extension.
+(use-package vertico-directory
+  :after vertico
+  :ensure nil
+  ;; More convenient directory navigation commands
+  :bind (:map vertico-map
+              ("RET" . vertico-directory-enter)
+              ("DEL" . vertico-directory-delete-char)
+              ("M-DEL" . vertico-directory-delete-word))
+  ;; Tidy shadowed file names
+  :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
+
+
+;; Enable rich annotations using the Marginalia package
+(use-package marginalia
+  ;; Bind `marginalia-cycle' locally in the minibuffer.  To make the binding
+  ;; available in the *Completions* buffer, add it to the
+  ;; `completion-list-mode-map'.
+  :bind (:map minibuffer-local-map
+         ("M-A" . marginalia-cycle))
+
+  ;; The :init section is always executed.
+  :init
+
+  ;; Marginalia must be activated in the :init section of use-package such that
+  ;; the mode gets enabled right away. Note that this forces loading the
+  ;; package.
+  (marginalia-mode))
+
+(use-package marginalia
   :ensure t
   :config
-  (dashboard-setup-startup-hook))
+  (marginalia-mode))
 
-(setq initial-buffer-choice (lambda () (get-buffer-create "*dashboard*")))
+(use-package embark
+  :ensure t
 
-;; Set the title
-(setq dashboard-banner-logo-title "Hey Paulie")
-;; Set the banner
-(setq dashboard-startup-banner "~/.doom.d/themes/true.png")
-;; Value can be
-;; - nil to display no banner
-;; - 'official which displays the official emacs logo
-;; - 'logo which displays an alternative emacs logo
-;; - 1, 2 or 3 which displays one of the text banners
-;; - "path/to/your/image.gif", "path/to/your/image.png", "path/to/your/text.txt" or "path/to/your/image.xbm" which displays whatever gif/image/text/xbm you would prefer
-;; - a cons of '("path/to/your/image.png" . "path/to/your/text.txt")
+  :bind
+  (("C-." . embark-act)         ;; pick some comfortable binding
+   ("C-;" . embark-dwim)        ;; good alternative: M-.
+   ("C-h B" . embark-bindings)) ;; alternative for `describe-bindings'
 
-;; Content is not centered by default. To center, set
-(setq dashboard-center-content t)
-;; vertically center content
-(setq dashboard-vertically-center-content t)
+  :init
 
-;; To disable shortcut "jump" indicators for each section, set
-(setq dashboard-show-shortcuts nil)
+  ;; Optionally replace the key help with a completing-read interface
+  (setq prefix-help-command #'embark-prefix-help-command)
 
-(setq dashboard-items '((recents   . 5)
-                        (bookmarks . 5)
-                        (projects  . 5)
-                        (agenda    . 5)
-                        (registers . 5)))
+  ;; Show the Embark target at point via Eldoc. You may adjust the
+  ;; Eldoc strategy, if you want to see the documentation from
+  ;; multiple providers. Beware that using this can be a little
+  ;; jarring since the message shown in the minibuffer can be more
+  ;; than one line, causing the modeline to move up and down:
+
+  ;; (add-hook 'eldoc-documentation-functions #'embark-eldoc-first-target)
+  ;; (setq eldoc-documentation-strategy #'eldoc-documentation-compose-eagerly)
+
+  :config
+
+  ;; Hide the mode line of the Embark live/completions buffers
+  (add-to-list 'display-buffer-alist
+               '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
+                 nil
+                 (window-parameters (mode-line-format . none)))))
+
+;; Consult users will also want the embark-consult package.
+(use-package embark-consult
+  :ensure t ; only need to install it, embark loads it after consult if found
+  :hook
+  (embark-collect-mode . consult-preview-at-point-mode))

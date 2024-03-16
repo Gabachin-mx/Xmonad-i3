@@ -13,7 +13,7 @@
 
 (line-number-mode 1)
 (column-number-mode 1)
-(setq max-mini-window-height 1)
+
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
 (setq history-length 25 )
@@ -29,8 +29,7 @@
     (command-error-default-function data context caller)))
 
 (add-to-list 'display-buffer-alist
-             '("^\\*.*\\*$" . (display-buffer-below-selected))
-             '("." nil (reusable-frames . t)))
+             '("^\\*.*\\*$" . (display-buffer-below-selected)))
 
 (setq command-error-function #'my-command-error-function)
 
@@ -796,121 +795,3 @@ _h_ decrease width    _l_ increase width
   :ensure t ; only need to install it, embark loads it after consult if found
   :hook
   (embark-collect-mode . consult-preview-at-point-mode))
-
-(use-package ivy
-  :ensure t
-  :demand
-  :diminish ivy-mode
-  :bind (("C-c C-r" . ivy-resume)
-   ("C-x B" . ivy-switch-buffer-other-window)
-   ("C-x b" . ivy-switch-buffer))
-  :custom
-  (ivy-count-format "(%d/%d) ")
-  (ivy-use-virtual-buffers t)
-  (ivy-use-selectable-prompt t)
-  (ivy-fixed-height-minibuffer t)
-  ;; :hook
-  ;; (ivy-mode . ivy-posframe-mode) ;; see the posframe block below
-  :config
-  (ivy-mode)
-  (setq enable-recursive-minibuffers t))
-
-(use-package ivy-posframe
-  :ensure t
-  :after ivy
-  :diminish ivy-posframe-mode
-  :custom-face
-  (ivy-posframe ((t (list :background (face-attribute 'default :background)))))
-  (ivy-posframe-border ((t (:background "gold"))))
-  (ivy-posframe-cursor ((t (:background "gold"))))
-  :config
-  ;; custom define height of post frame per function
-  (setq ivy-posframe-height-alist '((find-file . 13)
-            (t         . 13)))
-  ;; display at `ivy-posframe-style'
-  (setq ivy-posframe-display-functions-alist
-  '((complete-symbol   . ivy-posframe-display-at-point)
-    (counsel-M-x       . ivy-posframe-display-at-point)
-    (helm--dir-file-name       . ivy-posframe-display-at-point)
-    (counsel-find-file . ivy-posframe-display-at-window-bottom-left)
-    (ivy-switch-buffer . ivy-posframe-display-at-window-bottom-left)
-    (t                 . ivy-posframe-display-at-window-bottom-left)))
-  ;; other customizations
-  (setq ivy-posframe-hide-minibuffer t)
-  ;; (setq ivy-posframe-min-width 120)
-  ;; (setq ivy-posframe-width 120)
-  (setq ivy-posframe-border-width 1)
-  (ivy-posframe-mode 1))
-
-(use-package counsel
-  :after ivy
-  :ensure t
-  :demand
-  :diminish counsel-mode
-  :config
-  (counsel-mode 1)
-  ;; change default regexes
-  (setq ivy-initial-inputs-alist
-  '((counsel-minor . "^+")
-    (counsel-package . "^+")
-    (counsel-org-capture . "")
-    (counsel-M-x . "")
-    (counsel-describe-function . "")
-    (counsel-describe-variable . "")
-    (org-refile . "^")
-    (org-agenda-refile . "^")
-    (org-capture-refile . "^")
-    (Man-completion-table . "^")
-    (woman . "^"))))
-
-(use-package ivy-rich
-  :after ivy
-  :ensure t
-  :demand
-  :custom
-  (ivy-virtual-abbreviate 'full
-        ivy-rich-switch-buffer-align-virtual-buffer t
-        ivy-rich-path-style 'abbrev)
-  :config
-  (setq ivy-rich-parse-remote-buffer nil)
-  (setq ivy-rich-parse-remote-file-path nil)
-  (ivy-set-display-transformer 'ivy-switch-buffer
-       'ivy-rich-switch-buffer-transformer)
-  (ivy-rich-mode 1))
-
-;; open file as root
-(defun do.minimal.misc/sudo-open ()
-  "Like `find-file', but with root rights using TRAMP"
-  (interactive)
-  (let ((file (read-file-name "Open as root: ")))
-    (unless (file-writable-p file)
-      (find-file (concat "/sudo:root@localhost:" file)))))
-;; bind to a key
-(global-set-key (kbd "C-x F") #'do.minimal.misc/sudo-open)
-
-;; fill to end of line with a single character
-(defvar do.minimal.misc/fill-to-end-with-char-col fill-column
-  "The value that `fill-to-end' fills the column until.")
-
-(defun fill-to-end-with-char (char)
-  "Fill the current line with CHAR from point until the column
-  including `do.minimal.misc/fill-to-end-with-char-col'.
-
-When called with a prefix argument, show a prompt asking for the
-character to fill with. The default character to fill is '-'."
-  (interactive
-   (if current-prefix-arg
-       (list (let ((input))
-               (while (not (= (length input) 1))
-                 (setq input (read-string "Fill with character: ")))
-               input))
-     (list "-")))
-  (save-excursion
-    (let* ((cur-point (point))
-           (cur-point-on-line (- cur-point (point-at-bol)))
-           (str-len (- do.minimal.misc/fill-to-end-with-char-col cur-point-on-line))
-           (str (make-string str-len (string-to-char char))))
-      (goto-char cur-point)
-      (insert str))))
-
- (global-set-key (kbd "C-x E") 'fill-to-end-with-char)

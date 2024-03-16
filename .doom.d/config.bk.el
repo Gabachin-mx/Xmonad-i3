@@ -13,7 +13,7 @@
 
 (line-number-mode 1)
 (column-number-mode 1)
-(setq max-mini-window-height 1)
+
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
 (setq history-length 25 )
@@ -808,7 +808,6 @@ _h_ decrease width    _l_ increase width
   (ivy-count-format "(%d/%d) ")
   (ivy-use-virtual-buffers t)
   (ivy-use-selectable-prompt t)
-  (ivy-fixed-height-minibuffer t)
   ;; :hook
   ;; (ivy-mode . ivy-posframe-mode) ;; see the posframe block below
   :config
@@ -831,7 +830,6 @@ _h_ decrease width    _l_ increase width
   (setq ivy-posframe-display-functions-alist
   '((complete-symbol   . ivy-posframe-display-at-point)
     (counsel-M-x       . ivy-posframe-display-at-point)
-    (helm--dir-file-name       . ivy-posframe-display-at-point)
     (counsel-find-file . ivy-posframe-display-at-window-bottom-left)
     (ivy-switch-buffer . ivy-posframe-display-at-window-bottom-left)
     (t                 . ivy-posframe-display-at-window-bottom-left)))
@@ -913,4 +911,4 @@ character to fill with. The default character to fill is '-'."
       (goto-char cur-point)
       (insert str))))
 
- (global-set-key (kbd "C-x E") 'fill-to-end-with-char)
+ (global-set-key (kbd "C-x E") #'fill-to-end-with-charfill-to-end-with-char)

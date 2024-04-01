@@ -15,6 +15,7 @@
 ;;      directory (for easy access to its source code).
 
 (desktop-save-mode 0)
+;; (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
 
 (doom! :input
        ;;bidi              ; (tfel ot) thgir etirw uoy gnipleh
@@ -24,9 +25,9 @@
 
        :completion
        company           ; the ultimate code completion backend
-       helm              ; the *other* search engine for love and life
+       ; helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
-       ivy               ; a search engine for love and life
+       ; ivy               ; a search engine for love and life
        vertico           ; the search engine of the future
 
        :ui

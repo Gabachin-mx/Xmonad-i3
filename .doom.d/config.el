@@ -76,8 +76,8 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;
-(setq doom-font (font-spec :family "Fira Code" :size 20 :weight 'semi-light)
-     doom-variable-pitch-font (font-spec :family "Hack" :size 20))
+(setq doom-font (font-spec :family "Fira Code" :size 14 :weight 'semi-light)
+     doom-variable-pitch-font (font-spec :family "Hack" :srze 14))
 
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -171,17 +171,17 @@
 (setq org-directory "~/org/")
 
 ;; force doom to open at dashboard
-;; (setq doom-fallback-buffer-name "*dashboard*")
-;; (setq fancy-splash-image "~/.doom.d/themes/true.png")
-;; (setq +doom-dashboard-pwd-policy "~")
+ (setq doom-fallback-buffer-name "*doom-dashboard*")
+ (setq fancy-splash-image "~/.doom.d/themes/true.png")
+ (setq +doom-dashboard-pwd-policy "~")
 
 
-(setq initial-buffer-choice (lambda () (get-buffer-create "*doom*"))) ;; necessary for emacsclient
+(setq initial-buffer-choice (lambda () (get-buffer-create "*doom-dashboard*"))) ;; necessary for emacsclient
 ;;
 (setq dashboard-startup-banner "~/.doom.d/themes/true.png")
 
 ;; set opacity of frames
-(add-to-list 'default-frame-alist '(alpha-background . 95))
+(add-to-list 'default-frame-alist '(alpha-background . 85))
 
 ;; backup files
 (setq auto-save-default t
@@ -227,6 +227,10 @@
     :if (display-graphic-p)
     :config (treemacs-icons-dired-mode))
   )
+;;
+(use-package nerd-icons-dired
+  :hook
+  (dired-mode . nerd-icons-dired-mode))
 ;;
 (use-package dired-subtree :ensure t
   :after dired
@@ -606,23 +610,25 @@ _h_ decrease width    _l_ increase width
         (setq xclip-mode t)
         (setq xclip-method (quote wl-copy)))
 
+(add-hook 'window-setup-hook #'xclip-mode)
+
 
 (add-to-list 'load-path "~/.doom.d/lisp")
 
-(use-package welcome-dashboard
-  :ensure nil ;; when using local file and not straight nor use-package
-  :config
-  (setq welcome-dashboard-latitude 56.7365
-        welcome-dashboard-longitude 16.2981 ;; latitude and longitude must be set to show weather information
-        welcome-dashboard-use-nerd-icons t ;; Use nerd icons instead of all-the-icons
-        welcome-dashboard-path-max-length 75
-        welcome-dashboard-use-fahrenheit nil ;; show in celcius or fahrenheit.
-        welcome-dashboard-min-left-padding 10
-        welcome-dashboard-image-file "~/.doom.d/themes/true.png"
-        welcome-dashboard-image-width 200
-        welcome-dashboard-image-height 169
-        welcome-dashboard-title "Hey Paulie")
-  (welcome-dashboard-create-welcome-hook))
+; (use-package welcome-dashboard
+;   :ensure nil ;; when using local file and not straight nor use-package
+;   :config
+;   (setq welcome-dashboard-latitude 56.7365
+;         welcome-dashboard-longitude 16.2981 ;; latitude and longitude must be set to show weather information
+;         welcome-dashboard-use-nerd-icons t ;; Use nerd icons instead of all-the-icons
+;         welcome-dashboard-path-max-length 75
+;         welcome-dashboard-use-fahrenheit nil ;; show in celcius or fahrenheit.
+;         welcome-dashboard-min-left-padding 10
+;         welcome-dashboard-image-file "~/.doom.d/themes/true.png"
+;         welcome-dashboard-image-width 200
+;         welcome-dashboard-image-height 169
+;         welcome-dashboard-title "Hey Paulie")
+  ; (welcome-dashboard-create-welcome-hook))
 
 ;; ;; use-package with package.el:
 ;; (use-package dashboard
@@ -863,20 +869,58 @@ _h_ decrease width    _l_ increase width
     (Man-completion-table . "^")
     (woman . "^"))))
 
-(use-package ivy-rich
-  :after ivy
-  :ensure t
-  :demand
-  :custom
-  (ivy-virtual-abbreviate 'full
-        ivy-rich-switch-buffer-align-virtual-buffer t
-        ivy-rich-path-style 'abbrev)
-  :config
-  (setq ivy-rich-parse-remote-buffer nil)
-  (setq ivy-rich-parse-remote-file-path nil)
-  (ivy-set-display-transformer 'ivy-switch-buffer
-       'ivy-rich-switch-buffer-transformer)
-  (ivy-rich-mode 1))
+;; (use-package ivy-rich
+;;   :after ivy
+;;   :ensure t
+;;   :demand
+;;   :custom
+;;   (ivy-virtual-abbreviate 'full
+;;         ivy-rich-switch-buffer-align-virtual-buffer t
+;;         ivy-rich-path-style 'abbrev)
+;;   :config
+;;   (setq ivy-rich-parse-remote-buffer nil)
+;;   (setq ivy-rich-parse-remote-file-path nil)
+;;   (ivy-set-display-transformer 'ivy-switch-buffer
+;;        'ivy-rich-switch-buffer-transformer)
+;;   (ivy-rich-mode 1))
+;;
+(require 'ivy-rich)
+(ivy-rich-mode 1)
+
+(setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-line)
+
+(ivy-rich-modify-column
+ 'ivy-switch-buffer
+ 'ivy-rich-switch-buffer-major-mode
+ '(:width 20 :face error))
+
+(ivy-rich-modify-columns
+ 'ivy-switch-buffer
+ '((ivy-rich-switch-buffer-size (:align right))
+   (ivy-rich-switch-buffer-major-mode (:width 20 :face error))))
+
+(setq ivy-rich-path-style 'full)
+
+(defun ivy-rich-switch-buffer-icon (candidate)
+  (with-current-buffer
+      (get-buffer candidate)
+    (let ((icon (all-the-icons-icon-for-mode major-mode)))
+      (if (symbolp icon)
+          (all-the-icons-icon-for-mode 'fundamental-mode)
+        icon))))
+
+(setq ivy-rich-display-transformers-list
+      '(ivy-switch-buffer
+        (:columns
+         ((ivy-rich-switch-buffer-icon (:width 2))
+          (ivy-rich-candidate (:width 30))
+          (ivy-rich-switch-buffer-size (:width 7))
+          (ivy-rich-switch-buffer-indicators (:width 4 :face error :align right))
+          (ivy-rich-switch-buffer-major-mode (:width 12 :face warning))
+          (ivy-rich-switch-buffer-project (:width 15 :face success))
+          (ivy-rich-switch-buffer-path (:width (lambda (x) (ivy-rich-switch-buffer-shorten-path x (ivy-rich-minibuffer-width 0.3))))))
+         :predicate
+         (lambda (cand) (get-buffer cand)))))
 
 ;; open file as root
 (defun do.minimal.misc/sudo-open ()
@@ -914,3 +958,10 @@ character to fill with. The default character to fill is '-'."
       (insert str))))
 
  (global-set-key (kbd "C-x E") 'fill-to-end-with-char)
+
+(require 'simpleclip)
+(simpleclip-mode 1)
+
+;; C-<insert> simpleclip-copy
+;; S-<delete> simpleclip-cut
+;; S-<insert> simpleclip-paste

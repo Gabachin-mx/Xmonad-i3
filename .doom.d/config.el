@@ -171,12 +171,12 @@
 (setq org-directory "~/org/")
 
 ;; force doom to open at dashboard
- (setq doom-fallback-buffer-name "*doom-dashboard*")
+ (setq doom-fallback-buffer-name "*dashboard*")
  (setq fancy-splash-image "~/.doom.d/themes/true.png")
  (setq +doom-dashboard-pwd-policy "~")
 
 
-(setq initial-buffer-choice (lambda () (get-buffer-create "*doom-dashboard*"))) ;; necessary for emacsclient
+(setq initial-buffer-choice (lambda () (get-buffer-create "*dashboard*"))) ;; necessary for emacsclient
 ;;
 (setq dashboard-startup-banner "~/.doom.d/themes/true.png")
 

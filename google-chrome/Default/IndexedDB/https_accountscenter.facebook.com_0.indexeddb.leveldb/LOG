@@ -1,6 +1,0 @@
-2024/01/09-15:57:14.182 9ce Creating DB /home/paul/.config/google-chrome/Default/IndexedDB/https_accountscenter.facebook.com_0.indexeddb.leveldb since it was missing.
-2024/01/09-15:57:14.190 9ce Reusing MANIFEST /home/paul/.config/google-chrome/Default/IndexedDB/https_accountscenter.facebook.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/01/09-16:00:18.711 9cf Level-0 table #5: started
-2024/01/09-16:00:18.714 9cf Level-0 table #5: 838 bytes OK
-2024/01/09-16:00:18.718 9cf Delete type=0 #3
-2024/01/09-16:00:18.718 9cf Manual compaction at level-0 from (begin) .. (end); will stop at (end)

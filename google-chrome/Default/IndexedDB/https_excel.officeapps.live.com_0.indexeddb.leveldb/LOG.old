@@ -1,7 +1,0 @@
-2024/02/20-09:02:33.089 885 Reusing MANIFEST /home/paul/.config/google-chrome/Default/IndexedDB/https_excel.officeapps.live.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/02/20-09:02:33.089 885 Recovering log #3
-2024/02/20-09:02:33.089 885 Reusing old log /home/paul/.config/google-chrome/Default/IndexedDB/https_excel.officeapps.live.com_0.indexeddb.leveldb/000003.log 
-2024/02/20-09:02:50.518 886 Level-0 table #5: started
-2024/02/20-09:02:50.520 886 Level-0 table #5: 1405 bytes OK
-2024/02/20-09:02:50.523 886 Delete type=0 #3
-2024/02/20-09:02:50.524 886 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

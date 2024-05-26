@@ -1,6 +1,0 @@
-2024/02/20-22:42:08.998 64a Reusing MANIFEST /home/paul/.config/google-chrome/Default/Sync Data/LevelDB/MANIFEST-000001
-2024/02/20-22:42:08.999 64a Recovering log #4464
-2024/02/20-22:42:09.002 64a Reusing old log /home/paul/.config/google-chrome/Default/Sync Data/LevelDB/004464.log 
-2024/02/20-22:42:22.340 649 Level-0 table #4468: started
-2024/02/20-22:42:22.358 649 Level-0 table #4468: 99155 bytes OK
-2024/02/20-22:42:22.362 649 Delete type=0 #4464
